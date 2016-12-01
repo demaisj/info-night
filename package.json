@@ -1,0 +1,16 @@
+{
+  "name": "info-night",
+  "version": "0.0.1",
+  "description": "La nuit de l'info",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeathMiner/info-night.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeathMiner/info-night/issues"
+  },
+  "homepage": "https://github.com/DeathMiner/info-night#readme"
+}
