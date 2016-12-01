@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/DeathMiner/info-night#readme",
   "dependencies": {
+    "colors": "^1.1.2",
     "ejs": "^2.5.3",
     "express": "^4.14.0",
     "express-ejs-layouts": "^2.2.0",
