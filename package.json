@@ -12,5 +12,10 @@
   "bugs": {
     "url": "https://github.com/DeathMiner/info-night/issues"
   },
-  "homepage": "https://github.com/DeathMiner/info-night#readme"
+  "homepage": "https://github.com/DeathMiner/info-night#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.12",
+    "nodemon": "^1.11.0"
+  }
 }
