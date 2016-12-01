@@ -1,8 +1,12 @@
 var express = require('express')
+    expressLayouts = require('express-ejs-layouts');
 var app = express()
 
+app.set("view engine", "ejs");
+app.use(expressLayouts);
+
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.render("body", { title: "test123"})
 })
 
 app.listen(8080, function () {
