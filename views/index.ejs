@@ -30,7 +30,13 @@
 			}
 			else if(modules[module].type === "layout")
 			{
-				
+				%>
+				<div>
+					<%
+						parse(" + modules[module].layout + ", modules[module].modules);
+					%>
+				</div>
+				<%
 			}
 			else
 			{
