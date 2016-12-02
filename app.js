@@ -4,7 +4,7 @@ var express    = require("express"),
     assert     = require("assert")
     colors     = require("colors");
 
-const dbURL = "mongodb://localhost:27017/airbus";
+const dbURL = "mongodb://salut:kk@167.114.247.210:27017/airbus";
 var port    = 8080;
 var app     = express()
 
@@ -22,20 +22,20 @@ mongo.connect(dbURL, function(error, db) {
   assert.equal(null, error);
   console.log(`MongoDB is listenting on ${dbURL}`);
 
-  app.get("/", function (req, res) {
-    res.render("index", { title: "Bienvenue !", "data": "Salut !"})
+  app.get("/", function(req, res) {
+    res.redirect("/index");
   })
 
-  app.get("/ajax/views/:page", function(req, res) {
-    let page = req.params.page;
-    let query = { "_id": page };
+  app.get("/:page", function (req, res) {
+      let page = req.params.page;
+      let query = { "_id": page };
 
-    db.collection("pages").find(query).toArray(function(error, data) {
-      if (data.length === 0)
-        return res.send(JSON.stringify({"error": 404}));
-      res.send(JSON.stringify(data[0], null, 2));
+      db.collection("pages").findOne(query, function(error, data) {
+        if (data.length === 0)
+          return res.render("404", {title: "Désolé, la page est introuvable."});
+        res.render("index", {title: `${page}`, data: data});
+      })
     })
-  })
 
   app.get("*", function(req, res) {
     res.render("404", { title: "Désolé, page introuvable :(" });
