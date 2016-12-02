@@ -1,4 +1,16 @@
 <%
+	for (file in css)
+	{
+		%>
+		<link rel="stylesheet" href="<%- css[file] %>">
+		<%
+	}
+	for (file in js)
+	{
+		%>
+		<script defer src="<%- css[file] %>"></script>
+		<%
+	}
 	function parse(parent_template, modules)
 	{
 		%><div class="<%- parent_template -%>" style="text-align: center"><%
