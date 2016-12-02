@@ -20,6 +20,25 @@
   margin-bottom: 3%;
 }
 
+/* layouts */
+
+.absolute
+{
+	position: absolute;
+}
+
+.column
+{
+	margin: auto;
+	display: inline-block;
+}
+
+.line
+{
+	text-align: center;
+	margin: auto;
+}
+
 /* page */
 
 html, body {
