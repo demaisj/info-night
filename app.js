@@ -25,27 +25,16 @@ mongo.connect(dbURL, function(error, db) {
     res.render("index", { title: "Bienvenue !"})
   })
 
-  app.get("/:page", function(req, res) {
-    let page = req.params.page;
-
-    res.render(page, { title: page }, function(error, html) {
-      if (error)
-        res.render("404", { title: "404 !" });
-      res.send(html);
-    });
-  })
-
-  app.get("/views/:page", function(req, res) {
+  app.get("/ajax/views/:page", function(req, res) {
     let page = req.params.page;
     let query = { "_id": page };
 
     db.collection("pages").find(query).toArray(function(error, data) {
-      res.render(page, { title: page, data: data }, function(error, html) {
-        if (error)
-          res.render("404", { title: "404 !" });
-        res.send(html);
-      });
+      if (data.length === 0)
+        return res.send(JSON.stringify({"error": 404}));
+      res.send(JSON.stringify(data[0], null, 2));
     })
+
   })
 
 })
