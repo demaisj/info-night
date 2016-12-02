@@ -43,20 +43,35 @@
 
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
-  background-color: #f3f2f2;
+  background-color: #3f51b5;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
 
+.center {
+	margin: auto;
+}
+
+.card_width {
+	width: 75%;
+}
+
+
+.menu_elem {
+	color: black;
+	padding-right: 20px;
+	font-size: 20px;
+	text-decoration: none;
+}
+
 .header {
-  background-color: #d6d6d6;
-  color: #757575;
-  min-height: 56px;
+  background-color: white;
+  min-height: 100px;
   width: 100%;
-  box-shadow: -5px 5px 5px #888888;
-  position: fixed; /*Header fixe, inserer une div pour recaller les éléments en dessous*/
+  position: fixed;
   margin: 0;
+  z-index: 2;
 }
 
 .footer {
@@ -73,7 +88,7 @@ html, body {
 }
 
 .filler {
-  min-height: 56px;
+  min-height: 150px;
   background-color: transparent;
 }
 
