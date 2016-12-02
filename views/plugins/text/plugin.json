@@ -1,0 +1,20 @@
+{
+	"name": "text",
+	"template_name": "text",
+	"directory": "plugins/text",
+	"parameters": [
+		{
+			"name": "text",
+			"type": "text",
+			"default": "Lorem ipsum dolor sid-ahmed, consectetur adipiscing elit. Curabitur gravida porta odio eu maximus. Nunc sed mi in nunc finibus gravida non sit amet nisl. Proin malesuada, risus eget pharetra interdum, metus libero suscipit nunc, quis facilisis elit mauris sit amet nulla. Etiam turpis odio, maximus ac laoreet quis, placerat et sem. Pellentesque nulla nisl, aliquet scelerisque dictum non, convallis vel est. Vivamus tristique ipsum in velit porttitor, non tempus est vulputate. Mauris risus leo, sagittis quis iaculis id, aliquam ac dolor. Ut semper pellentesque felis, id convallis quam porta ac. In cursus lobortis turpis, id bibendum sem aliquet eu. Aliquam odio mi, dignissim ut odio ac, pellentesque condimentum nisl. Nam ut nunc maximus, dapibus sem quis, consectetur leo. Curabitur vel nibh venenatis, ultricies quam in, finibus purus. Phasellus id congue augue. Sed viverra bibendum massa, eget ultrices massa convallis sed."
+		}
+	],
+	"dependancies": {
+		"css": [
+			"text.css"
+		],
+		"js": [
+			"text.js"
+		]
+	}
+}
