@@ -31,7 +31,7 @@ mongo.connect(dbURL, function(error, db) {
       let query = { "_id": page };
 
       db.collection("pages").findOne(query, function(error, data) {
-        if (data.length === 0)
+        if (typeof data === undefined || data.length === 0)
           return res.render("404", {title: "Désolé, la page est introuvable."});
         res.render("index", {title: `${page}`, data: data});
       })
