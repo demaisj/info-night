@@ -18,6 +18,7 @@
     "ejs": "^2.5.3",
     "express": "^4.14.0",
     "express-ejs-layouts": "^2.2.0",
+    "jsonfile": "^2.4.0",
     "mongodb": "^2.2.12",
     "nodemon": "^1.11.0"
   }

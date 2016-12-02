@@ -3,7 +3,9 @@ var express    = require("express"),
     mongo      = require("mongodb").MongoClient,
     assert     = require("assert"),
     path       = require("path"),
+    json       = require("jsonfile"),
     colors     = require("colors");
+    Plugins    = require("./Plugins.js").Plugins
 
 const dbURL = "mongodb://salut:kk@167.114.247.210:27017/airbus";
 var port    = 8080;
@@ -34,7 +36,9 @@ mongo.connect(dbURL, function(error, db) {
       db.collection("pages").findOne(query, function(error, data) {
         if (!data || data.length === 0)
           return res.render("404", {title: "Désolé, la page est introuvable."});
-        res.render("index", {title: `${page}`, data: data});
+
+        let plugins = new Plugins(data.layout.modules);
+        res.render("index", {title: `${page}`, css: plugins.getCss(), js: plugins.getJs(), data: data});
       })
     })
 
