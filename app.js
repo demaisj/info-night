@@ -36,6 +36,10 @@ mongo.connect(dbURL, function(error, db) {
       res.send(JSON.stringify(data[0], null, 2));
     })
   })
+
+  app.get("*", function(req, res) {
+    res.render("404", { title: "Désolé, page introuvable :(" });
+  })
 })
 
 app.listen(port, function () {
