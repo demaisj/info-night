@@ -1,0 +1,44 @@
+body
+{
+  font-family: 'Roboto';
+  color: white;
+  background-color: #34699A;
+}
+
+#titre_menu
+{
+  font-family: 'Pacifico';
+  margin: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.carre
+{
+  background-color: #408AB4;
+  width: 150px;
+  margin: auto;
+}
+
+.menu
+{
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background-color: #113F67;
+  width: 200px;
+  top: 0;
+}
+
+.image
+{
+  border-radius: 5px;
+  width: 150px;
+  margin: 25px;
+}
+
+.principal
+{
+  margin: 10px;
+  font-size: 50px;
+}
