@@ -5,14 +5,15 @@ var express    = require("express"),
     colors     = require("colors");
 
 const dbURL = "mongodb://localhost:27017/airbus";
-var app = express()
+var port    = 8080;
+var app     = express()
 
 app.set("view engine", "ejs");
 app.use(ejslayouts);
 app.use(express.static("public"));
 
 app.use(function(req, res, next) {
-  if (!req.url.match(/css|js/gi))
+  if (!req.url.match(/css|js|favicon|font|fonts|cdn/gi))
     console.log(`Page ${req.url.bold.green} requested at ${new Date().toLocaleTimeString().bold.blue}...`);
   next();
 })
@@ -22,7 +23,7 @@ mongo.connect(dbURL, function(error, db) {
   console.log(`MongoDB is listenting on ${dbURL}`);
 
   app.get("/", function (req, res) {
-    res.render("index", { title: "Bienvenue !"})
+    res.render("index", { title: "Bienvenue !", "data": "Salut !"})
   })
 
   app.get("/ajax/views/:page", function(req, res) {
@@ -34,11 +35,9 @@ mongo.connect(dbURL, function(error, db) {
         return res.send(JSON.stringify({"error": 404}));
       res.send(JSON.stringify(data[0], null, 2));
     })
-
   })
-
 })
 
-app.listen(8080, function () {
-  console.log("Server listening on port 8080!")
+app.listen(port, function () {
+  console.log(`Server listening on port ${port.toString().yellow}!`.bold)
 })
