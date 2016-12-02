@@ -1,7 +1,8 @@
 var express    = require("express"),
     ejslayouts = require("express-ejs-layouts"),
     mongo      = require("mongodb").MongoClient,
-    assert     = require("assert")
+    assert     = require("assert"),
+    path       = require("path"),
     colors     = require("colors");
 
 const dbURL = "mongodb://salut:kk@167.114.247.210:27017/airbus";
@@ -10,7 +11,7 @@ var app     = express()
 
 app.set("view engine", "ejs");
 app.use(ejslayouts);
-app.use(express.static("public"));
+app.use("/public", express.static(path.join(__dirname, "/public")));
 
 app.use(function(req, res, next) {
   if (!req.url.match(/css|js|favicon|font|fonts|cdn/gi))
