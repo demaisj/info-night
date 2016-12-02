@@ -15,11 +15,9 @@ class Plugins {
 
     for (module in this.modulesArr)
       if (this.modulesArr[module] != "div" && this.modulesArr[module] != "layout")
-        for (cssfile in cssfiles = json.readFileSync(`views/plugins/${this.modulesArr[module]}/plugin.json`)["dependancies"]["css"]) {
+        for (cssfile in cssfiles = json.readFileSync(`views/plugins/${this.modulesArr[module]}/plugin.json`)["dependancies"]["css"])
             this.css.indexOf(`/public/css/${this.modulesArr[module]}/${cssfiles[cssfile]}`) != 0 ? this.css.push(`/public/css/${this.modulesArr[module]}/${cssfiles[cssfile]}`) : 1;
-        }
-
-
+            
     return this.css;
   }
 
