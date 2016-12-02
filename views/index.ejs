@@ -1,19 +1,53 @@
 <%
+	for (file in css)
+	{
+		%>
+		<link rel="stylesheet" href="<%- css[file] %>">
+		<%
+	}
+	for (file in js)
+	{
+		%>
+		<script defer src="<%- css[file] %>"></script>
+		<%
+	}
 	function parse(parent_template, modules)
 	{
-		%><div class="<%- parent_template -%>"><%
+		%><div class="<%- parent_template -%>" style="text-align: center"><%
 		for (module in modules)
 		{
-			if (parent_template === 'absolute')
+			if (modules[module].type === "div")
 			{
 				%>
-				<div class="<%- parent_template -%>" style="transform: translate(<%= modules[module].bounds[0] %>,<%= modules[module].bounds[1] %>); width:<%= modules[module].bounds[2] %>; height:<%= modules[module].bounds[3] %>">
+				<div class="<%- modules[module].class %>">
+				</div>
 				<%
 			}
-			%>
-			<%- include('plugins/' + modules[module].type + '/' + modules[module].type, {parameters: modules[module].params}); %>
-			</div>
-			<%
+			else
+			{
+				if (parent_template === 'absolute')
+				{
+					%>
+					<div class="<%- parent_template -%>" style="position: absolute; transform: translate(<%= modules[module].bounds[0] %>,<%= modules[module].bounds[1] %>); width:<%= modules[module].bounds[2] %>; height:<%= modules[module].bounds[3] %>">
+					<%
+				}
+				else if(parent_template === 'line')
+				{
+					%>
+					<div class="<%- parent_template -%>" style="margin: auto; width:<%= modules[module].bounds[2] %>; height:<%= modules[module].bounds[3] %>">
+					<%
+				}
+				else if(parent_template === 'column')
+				{
+					%>
+					<div class="<%- parent_template -%>" style="margin: auto; display: inline-block; width:<%= modules[module].bounds[2] %>; height:<%= modules[module].bounds[3] %>">
+					<%
+				}
+				%>
+				<%- include('plugins/' + modules[module].type + '/' + modules[module].type, {parameters: modules[module].params}); %>
+				</div>
+				<%
+			}
 		}
 		%></div><%
 	}
