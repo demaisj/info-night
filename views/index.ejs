@@ -1,1 +1,21 @@
-<%- JSON.stringify(data) %>
+<%
+	function parse(parent_template, modules)
+	{
+		%><div class="<%- parent_template -%>"><%
+		for (module in modules)
+		{
+			if (parent_template === 'absolute')
+			{
+				%>
+				<div class="<%- parent_template -%>" style="transform: translate(<%= modules[module].bounds[0] %>,<%= modules[module].bounds[1] %>); width:<%= modules[module].bounds[2] %>; height:<%= modules[module].bounds[3] %>">
+				<%
+			}
+			%>
+			<%- include('plugins/' + modules[module].type + '/' + modules[module].type, {parameters: modules[module].params}); %>
+			</div>
+			<%
+		}
+		%></div><%
+	}
+	parse(data.layout.type, data.layout.modules);
+%>
