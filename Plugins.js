@@ -16,7 +16,7 @@ class Plugins {
     for (module in this.modulesArr)
       if (this.modulesArr[module] != "div" && this.modulesArr[module] != "layout")
         for (cssfile in cssfiles = json.readFileSync(`views/plugins/${this.modulesArr[module]}/plugin.json`)["dependancies"]["css"]) {
-            this.css.indexOf(`./plugins/${this.modulesArr[module]}/${cssfiles[cssfile]}`) != 0 ? this.css.push(`./plugins/${this.modulesArr[module]}/${cssfiles[cssfile]}`) : 1;
+            this.css.indexOf(`views/plugins/${this.modulesArr[module]}/${cssfiles[cssfile]}`) != 0 ? this.css.push(`views/plugins/${this.modulesArr[module]}/${cssfiles[cssfile]}`) : 1;
         }
 
 
@@ -31,7 +31,7 @@ class Plugins {
     for (module in this.modulesArr)
       if (this.modulesArr[module] != "div" && this.modulesArr[module] != "layout")
         for (jsfile in jsfiles = json.readFileSync(`views/plugins/${this.modulesArr[module]}/plugin.json`)["dependancies"]["js"])
-          this.js.indexOf(`./plugins/${this.modulesArr[module]}/${jsfiles[jsfile]}`) != 0 ? this.js.push(`./plugins/${this.modulesArr[module]}/${jsfiles[jsfile]}`) : 1;
+          this.js.indexOf(`views/plugins/${this.modulesArr[module]}/${jsfiles[jsfile]}`) != 0 ? this.js.push(`views/plugins/${this.modulesArr[module]}/${jsfiles[jsfile]}`) : 1;
 
     return this.js;
   }
