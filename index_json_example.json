@@ -1,0 +1,79 @@
+{
+	"_id": "index",
+	"layout": {
+		"type": "line",
+		"modules": [
+			{
+				"type": "div",
+				"class": "header",
+				"modules": [
+					{
+						"type": "text",
+						"bounds": ["0px", "Opx", "100%", "100%"],
+						"params": {
+							"text": "<h3 align='left' style='float: left; padding-left: 10px'>Title</3>"
+						}
+					},
+					{
+						"type": "text",
+						"bounds": ["0px", "Opx", "100%", "100%"],
+						"params": {
+							"text": "<nav align=right><a class='menu_elem' href=''>Link</a><a class='menu_elem' href=''>Link</a><a class='menu_elem' href=''>Link</a><a class='menu_elem' href=''>Link</a></nav>"
+						}
+					}
+				]
+			},
+			{
+				"type": "div",
+				"class": "filler",
+				"modules": [
+
+				]
+			},
+			{
+				"type": "div",
+				"class": "demo-card-wide mdl-card mdl-shadow--2dp center card_width",
+				"modules": [
+					{
+						"type": "div",
+						"class": "mdl-card__title",
+						"modules": [
+							{
+								"type": "text",
+								"bounds": ["0px", "Opx", "100%", "100%"],
+								"params": {
+									"text": "<h2 class='mdl-card__title-text'>Welcome</h2>"
+								}
+							}
+						]
+					},
+					{
+						"type": "div",
+						"class": "mdl-card__supporting-text center",
+						"modules": [
+							{
+								"type": "iframe",
+								"bounds": [
+									"0px",
+									"0px",
+									"100%",
+									"400px"
+								],
+								"params": {
+									"url": "https://player.vimeo.com/video/193716640"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "div",
+				"class": "footer",
+				"modules": [
+
+				]
+			}
+		]
+	}
+}
