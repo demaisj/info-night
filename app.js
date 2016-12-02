@@ -17,7 +17,7 @@ app.use("/public", express.static(path.join(__dirname, "/public")));
 
 app.use(function(req, res, next) {
   if (!req.url.match(/css|js|favicon|font|fonts|cdn/gi))
-    console.log(`Page ${req.url.bold.green} requested at ${new Date().toLocaleTimeString().bold.blue}...`);
+    console.log(`Page ${req.url.bold.green} requested at ${new Date().toLocaleTimeString().bold.blue} from ${req.ip}...`);
   next();
 })
 
