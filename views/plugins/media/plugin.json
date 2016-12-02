@@ -1,0 +1,25 @@
+{
+	"name": "media",
+	"template_name": "media",
+	"directory": "plugins/media",
+	"parameters": [
+		{
+			"name": "type",
+			"type": "text",
+			"default": "embed"
+		},
+		{
+			"name": "url",
+			"type": "text",
+			"default": "https://www.youtube.com/embed/jNQXAC9IVRw"
+		}
+	],
+	"dependancies": {
+		"css": [
+			"media.css"
+		],
+		"js": [
+			"media.js"
+		]
+	}
+}

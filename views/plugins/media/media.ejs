@@ -1,0 +1,17 @@
+<% if (parameters['type'] == "img") { %>
+<img src="<% parameters['url'] %>" class="plugin-media--img">
+<% } else if (parameters['type'] == "audio") { %>
+<audio controls class="plugin-media--audio">
+	<source src="<% parameters['url'] %>">
+	Your browser is too old!
+</audio>
+<% } else if (parameters['type'] == "video") { %>
+<video cotnrols class="plugin-media--video">
+	<source src="<% parameters['url'] %>">
+	Your browser is too old!
+</video>
+<% } else if (parameters['type'] == "embed") { %>
+<iframe src="<% parameters['url'] %>" class="plugin-media--embed"></iframe>
+<% } else { %>
+<p>This <code>media</code> plugin is not configured correctly.</p>
+<% } %>
